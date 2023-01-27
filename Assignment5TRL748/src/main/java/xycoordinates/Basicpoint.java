@@ -10,7 +10,6 @@ public class Basicpoint implements Cloneable{
     {
   	  this.x=x;
   	  this.y=y;
-  	//  System.out.println("X and Y Coordinates created");
     }
     boolean checking()
     {
@@ -29,8 +28,6 @@ public class Basicpoint implements Cloneable{
             	  Basicpoint a1=new Basicpoint("13.7","13.7");
             	  System.out.println(a1.checking());
             	  Basicpoint a2=a1.clonePoint(); 
-            	//  a2.y="11";
-            	 // System.out.println(a1.y);
             	  System.out.println("Cloned Coordinates:X-"+a2.x+" Y-"+a2.y);
           }
 }
