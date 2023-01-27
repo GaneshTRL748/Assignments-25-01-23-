@@ -17,11 +17,11 @@ public class Basicpoint implements Cloneable{
     {
   	  if(this.x.equals(tempx)&&this.y.equals(tempy))
   	  {
-  		  logger.info("X and Y Coordinates are Equal");
+  		  logger.log("X and Y Coordinates are Equal");
   		  return true;
   	  }
   	  else {
-  		  logger.info("X and Y Coordinates are NotEqual");
+  		  logger.log("X and Y Coordinates are NotEqual");
   		  return false;
   	  }
     }
