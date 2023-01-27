@@ -1,7 +1,7 @@
 package xycoordinates;
 import java.util.logging.Logger;
 public class Basicpoint implements Cloneable{
-	Logger l= Logger.getLogger("com.api.jar");
+	Logger logger= Logger.getLogger("com.api.jar");
 	String x;
     String y;
     protected Object clone() throws CloneNotSupportedException
@@ -13,24 +13,26 @@ public class Basicpoint implements Cloneable{
   	  this.x=x;
   	  this.y=y;
     }
-    boolean checking()
+    boolean checking(String tempx,String tempy)
     {
-  	  if(this.x.equals(this.y))
+  	  if(this.x.equals(tempx)&&this.y.equals(tempy))
   	  {
-  		  l.info("X and Y Coordinates are Equal");
+  		  logger.info("X and Y Coordinates are Equal");
   		  return true;
   	  }
   	  else {
-  		  l.info("X and Y Coordinates are NotEqual");
+  		  logger.info("X and Y Coordinates are NotEqual");
   		  return false;
   	  }
     }
        public static void main(String[] arg) throws CloneNotSupportedException
         {
-    	   Logger l= Logger.getLogger("com.api.jar");
+    	          Logger logger= Logger.getLogger("com.api.jar");
             	  Basicpoint a1=new Basicpoint("13.7","13.7");
-            	  l.info(a1.checking()+"!!!");
-            	  Basicpoint a2=(Basicpoint)a1.clone(); 
-            	  l.info("Cloned Coordinates:X-"+a2.x+" Y-"+a2.y);
+            	  Basicpoint a2=new Basicpoint("13.7","13.7");
+            	  logger.info("Coordinates status:"+a1.checking(a2.x,a2.y));
+            	  Basicpoint a3=(Basicpoint)a1.clone();
+            	  logger.info("Cloned Coordinates:X-"+a3.x+" Y-"+a3.y);
+            	  
           }
 }
