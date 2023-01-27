@@ -1,5 +1,7 @@
 package xycoordinates;
+import java.util.logging.Logger;
 public class Basicpoint implements Cloneable{
+	Logger l= Logger.getLogger("com.api.jar");
 	String x;
     String y;
     protected Object clone() throws CloneNotSupportedException
@@ -15,19 +17,20 @@ public class Basicpoint implements Cloneable{
     {
   	  if(this.x.equals(this.y))
   	  {
-  		  System.out.println("X and Y Coordinates are Equal");
+  		  l.info("X and Y Coordinates are Equal");
   		  return true;
   	  }
   	  else {
-  		  System.out.println("X and Y Coordinates are NotEqual");
+  		  l.info("X and Y Coordinates are NotEqual");
   		  return false;
   	  }
     }
        public static void main(String[] arg) throws CloneNotSupportedException
         {
+    	   Logger l= Logger.getLogger("com.api.jar");
             	  Basicpoint a1=new Basicpoint("13.7","13.7");
-            	  System.out.println(a1.checking());
+            	  l.info(a1.checking()+"!!!");
             	  Basicpoint a2=(Basicpoint)a1.clone(); 
-            	  System.out.println("Cloned Coordinates:X-"+a2.x+" Y-"+a2.y);
+            	  l.info("Cloned Coordinates:X-"+a2.x+" Y-"+a2.y);
           }
 }
