@@ -3,6 +3,7 @@ import java.sql.*;
 import java.util.logging.Logger;
 class Singleton{
 	Connection con;
+	private String pass="ganeshS@123";
 	private static Singleton  a1;
 	Logger logger= Logger.getLogger("log4j-api-2.19.0.jar");
 	private Singleton()
@@ -21,7 +22,7 @@ class Singleton{
 	{
 		try {
 		   Class.forName("com.mysql.jdbc.Driver"); 
- 		    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tree","root","ganeshS@123");
+ 		    con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tree","root",pass);
  		   logger.info("Database Connected Successfully");
  	   }
  	   catch(SQLException e)
@@ -39,7 +40,7 @@ class Singleton{
 			logger.info("Oops something went wrong"+e);
 		}
 		finally{
-		logger.info("Databaseconnection CLosed Successfully");
+	      	logger.info("Databaseconnection CLosed Successfully");
 		}
 	}
 }
