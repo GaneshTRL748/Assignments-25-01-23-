@@ -4,9 +4,16 @@ public class Basicpoint implements Cloneable{
 	Logger logger= Logger.getLogger("com.api.jar");
 	String x;
     String y;
-    protected Object clone() throws CloneNotSupportedException
+    protected Object clone()
     {
-        return super.clone();
+    	try {
+           return super.clone();
+    	}
+    	catch(CloneNotSupportedException e)
+    	{
+    		logger.info("Oops something went wrong"+e);
+    		return null;
+    	}
     }
     Basicpoint(String x,String y)
     {
