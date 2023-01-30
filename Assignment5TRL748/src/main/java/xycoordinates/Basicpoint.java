@@ -4,6 +4,7 @@ public class Basicpoint implements Cloneable{
 	Logger logger= Logger.getLogger("com.api.jar");
 	String x;
     String y;
+    @Override
     protected Object clone()
     {
     	try {
