@@ -30,7 +30,7 @@ class Singleton{
  		   logger.info("oops something wentwrong"+e);
  	   }
 	}
-	void closedbconnection() throws ClassNotFoundException
+	void closedbconnection() 
 	{
 		try {
 			con.close();
