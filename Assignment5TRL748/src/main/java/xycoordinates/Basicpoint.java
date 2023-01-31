@@ -4,7 +4,6 @@ public class Basicpoint  implements Cloneable{
 	Logger logger= Logger.getLogger("com.api.jar");
 	String x;
     String y;
-    //this method implements the clone()
     Basicpoint clonemethod()
     {
     	try {
@@ -13,7 +12,7 @@ public class Basicpoint  implements Cloneable{
     	catch(CloneNotSupportedException e)
     	{
     		logger.info("Oops something went wrong"+e);
-    		return null;
+    		return this;
     	}
     }
     Basicpoint(String x,String y)
