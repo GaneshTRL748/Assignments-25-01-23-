@@ -7,7 +7,7 @@ public class Creditcardoperation implements Cloneable {
             String cardname;
             String cardnumber;
             String expirydate;
-            protected Object clonemethod()
+            protected Object clone()
             {
             	try {
                    return super.clone();
@@ -40,7 +40,7 @@ public class Creditcardoperation implements Cloneable {
             {
             	Logger logger= Logger.getLogger("com.api.jar");
             	Creditcardoperation a1=new Creditcardoperation("ganesh","124717","12.11.2027");
-            	Creditcardoperation a2=(Creditcardoperation)a1.clonemethod();
+            	Creditcardoperation a2=(Creditcardoperation)a1.clone();
             	logger.log(Level.INFO,()->"Cloned Details:\ncardnumber:"+a2.cardnumber+"\ncardname:"+a2.cardname+"\nexpirydate:"+a2.expirydate);
             	logger.log(Level.INFO,()->"verification status:"+a1.checkcardnumber(a2.cardnumber));
             }
