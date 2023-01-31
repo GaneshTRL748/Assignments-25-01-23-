@@ -1,13 +1,13 @@
 package creditcard;
 import java.util.*;
-import java.util.logging.Logger;
+import java.util.logging.*;
 public class Creditcardoperation implements Cloneable {
 	         Scanner p=new Scanner(System.in);
 	         Logger logger= Logger.getLogger("com.api.jar");
             String cardname;
             String cardnumber;
             String expirydate;
-            protected Object clone()
+            protected Object clonemethod()
             {
             	try {
                    return super.clone();
@@ -36,12 +36,12 @@ public class Creditcardoperation implements Cloneable {
             		return false;
             	}
             }
-            public static void main(String[] args) 
+            public static void main(String[] args) throws CloneNotSupportedException
             {
             	Logger logger= Logger.getLogger("com.api.jar");
             	Creditcardoperation a1=new Creditcardoperation("ganesh","124717","12.11.2027");
-            	Creditcardoperation a2=(Creditcardoperation)a1.clone();
-            	logger.log("Cloned Details:\ncardnumber:"+a2.cardnumber+"\ncardname:"+a2.cardname+"\nexpirydate:"+a2.expirydate);
-            	logger.log("verification status:"+a1.checkcardnumber(a2.cardnumber));
+            	Creditcardoperation a2=(Creditcardoperation)a1.clonemethod();
+            	logger.log(Level.INFO,()->"Cloned Details:\ncardnumber:"+a2.cardnumber+"\ncardname:"+a2.cardname+"\nexpirydate:"+a2.expirydate);
+            	logger.log(Level.INFO,()->"verification status:"+a1.checkcardnumber(a2.cardnumber));
             }
 }
