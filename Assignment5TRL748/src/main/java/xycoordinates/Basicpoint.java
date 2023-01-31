@@ -7,7 +7,7 @@ public class Basicpoint implements Cloneable {
     public Object clone()
     {
     	try {
-           return (Basicpoint)super.clone();
+           return super.clone();
     	}
     	catch(CloneNotSupportedException e)
     	{
