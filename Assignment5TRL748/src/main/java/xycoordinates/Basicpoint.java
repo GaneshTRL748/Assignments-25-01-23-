@@ -12,7 +12,7 @@ public class Basicpoint implements Cloneable {
     	catch(CloneNotSupportedException e)
     	{
     		logger.info("Oops something went wrong"+e);
-    		return null;
+    		return "";
     	}
     }
     Basicpoint(String x,String y)
