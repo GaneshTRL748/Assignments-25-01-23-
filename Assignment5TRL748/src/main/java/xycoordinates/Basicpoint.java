@@ -1,18 +1,18 @@
 package xycoordinates;
 import java.util.logging.*;
-public class Basicpoint implements Cloneable{
-        Logger logger= Logger.getLogger("com.api.jar");
-        String x;
-        String y;
-    protected Object clonemethod()
+public class Basicpoint  implements Cloneable{
+	Logger logger= Logger.getLogger("com.api.jar");
+	String x;
+    String y;
+    Basicpoint clonemethod()
     {
     	try {
-           return super.clone();
+           return (Basicpoint)super.clone();
     	}
     	catch(CloneNotSupportedException e)
     	{
     		logger.info("Oops something went wrong"+e);
-    		return "";
+    		return null;
     	}
     }
     Basicpoint(String x,String y)
