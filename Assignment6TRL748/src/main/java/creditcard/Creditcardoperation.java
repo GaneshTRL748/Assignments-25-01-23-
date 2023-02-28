@@ -1,9 +1,10 @@
 package creditcard;
+import java.io.FileDescriptor;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.*;
-import java.util.logging.*;
-public class Creditcardoperation implements Cloneable {
-	         Scanner p=new Scanner(System.in);
-	         Logger logger= Logger.getLogger("com.api.jar");
+public class Creditcardoperation implements Cloneable{
+	static PrintStream out=new PrintStream(new FileOutputStream(FileDescriptor.out));
             String cardname;
             String cardnumber;
             String expirydate;
@@ -14,7 +15,7 @@ public class Creditcardoperation implements Cloneable {
             	}
             	catch(CloneNotSupportedException e)
             	{
-            		logger.info("Oops something went wrong"+e);
+            		out.println("Oops something went wrong"+e);
             		return "";
             	}
             }
@@ -28,20 +29,24 @@ public class Creditcardoperation implements Cloneable {
             {
             	if(this.cardnumber.equals(str))
             	{
-            		logger.info("Card number verified successfully.......");
+            		out.println("Card number verified successfully.......");
             		return true;
             	}
             	else {
-            		logger.info("OOPs wrong card number");
+            		out.println("OOPs wrong card number");
             		return false;
             	}
             }
             public static void main(String[] args) 
             {
-            	Logger logger= Logger.getLogger("com.api.jar");
-            	Creditcardoperation a1=new Creditcardoperation("ganesh","124717","12.11.2027");
+            	Scanner p=new Scanner(System.in);
+            	out.println("Enter your name and cardnumber and expirydate");
+            	String name=p.next();
+            	String cardnumber=p.next();
+            	String date=p.next();
+            	Creditcardoperation a1=new Creditcardoperation(name,cardnumber,date);
             	Creditcardoperation a2=(Creditcardoperation)a1.clone();
-            	logger.log(Level.INFO,()->"Cloned Details:\ncardnumber:"+a2.cardnumber+"\ncardname:"+a2.cardname+"\nexpirydate:"+a2.expirydate);
-            	logger.log(Level.INFO,()->"verification status:"+a1.checkcardnumber(a2.cardnumber));
+            	out.println("Cloned Details:\ncardnumber:"+a2.cardnumber+"\ncardname:"+a2.cardname+"\nexpirydate:"+a2.expirydate);
+            	out.println("verification status:"+a1.checkcardnumber(a2.cardnumber));
             }
 }
